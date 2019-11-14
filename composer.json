@@ -1,0 +1,22 @@
+{
+    "name": "byinti/picpay",
+    "description": "SDK to integrate with PicPay API",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Thiago Meireles da Silva",
+            "email": "thiagom@byinti.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.6",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Picpay\\": "src/"
+        }
+    }
+}
