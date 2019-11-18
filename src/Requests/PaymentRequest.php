@@ -8,7 +8,7 @@ use Picpay\Entities\Payment;
 /**
  * Class PaymentRequest
  *
- * @package Picpay\Request
+ * @package Picpay\Requests
  */
 class PaymentRequest extends BaseRequest
 {
