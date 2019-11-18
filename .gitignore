@@ -4,3 +4,5 @@
 composer.lock
 vendor
 .idea
+/phpdocker/
+docker-compose.yml
