@@ -64,9 +64,9 @@ abstract class BaseRequest
 
                 $body = json_decode($response->getBody());
 
-                $message = $body->message ?: $message;
+                $message = isset($body->message) ? $body->message : $message;
 
-                $errors = $body->errors ?: $errors;
+                $errors = isset($body->errors) ? $body->errors : $errors;
             }
 
             throw new PicpayRequestException($message, $code, $e, $errors);
