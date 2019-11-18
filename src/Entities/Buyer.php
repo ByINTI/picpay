@@ -27,23 +27,8 @@ class Buyer implements JsonSerializable
     private $phone;
 
     /**
-     * Buyer entitie constructor
-     *
-     * @param string $firstName
-     * @param string $lastName
-     * @param string $document
-     * @param string $email
-     * @param string $phone
+     * @return array|mixed
      */
-    public function __construct($firstName, $lastName, $document, $email, $phone)
-    {
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->document = $document;
-        $this->email = $email;
-        $this->phone = $phone;
-    }
-
     public function jsonSerialize()
     {
         $vars = get_object_vars($this);
