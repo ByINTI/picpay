@@ -3,9 +3,11 @@
 namespace Picpay\Requests;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
 use Picpay\Exceptions\PicpayRequestException;
+use Psr\Http\Message\StreamInterface;
 
 /**
  * Class BaseRequest
@@ -41,12 +43,12 @@ abstract class BaseRequest
 
     /**
      * Send the request and returns the response body decoded
-     * or throw an especific exception with errors messages
+     * or throw an specific exception with errors messages
      * if the return code is !== 200
      *
-     * @return \Psr\Http\Message\StreamInterface
+     * @return StreamInterface
      * @throws PicpayRequestException
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws GuzzleException
      */
     public function sendRequest()
     {
@@ -56,7 +58,7 @@ abstract class BaseRequest
             return json_decode($response->getBody());
         } catch (RequestException $e) {
             $code = -1;
-            $message = 'A Request error ocurred';
+            $message = 'An error ocurred while connecting to PicPay';
             $errors = [];
 
             if ($response = $e->getResponse()) {

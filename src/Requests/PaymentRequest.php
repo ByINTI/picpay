@@ -20,7 +20,6 @@ class PaymentRequest extends BaseRequest
      *
      * @param string $picpayToken
      * @param Payment $payment
-     * @throws \Exception
      */
     public function __construct($picpayToken, Payment $payment)
     {
